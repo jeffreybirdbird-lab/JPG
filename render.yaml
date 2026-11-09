@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: gundam-jpg
+    runtime: static
+    staticPublishPath: ./public
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: Access-Control-Allow-Origin
+        value: "*"
